@@ -13,7 +13,7 @@ Taxer = module.exports = Class.extend({
 			weight: -100,
 			on: function(request) {
 				request.accept({
-					topic: 'taxer',
+					topic: 'taxation',
 					action: 'calculate',
 				});
 			}.bind(this),
@@ -28,7 +28,7 @@ Taxer = module.exports = Class.extend({
 			id: 'taxer-texas',
 			on: function(request) {
 				request.accept({
-					topic: 'taxer',
+					topic: 'taxation',
 					action: 'calculate',
 					state : 'texas'
 				});
@@ -44,7 +44,7 @@ Taxer = module.exports = Class.extend({
 			id: 'taxer-texas-austin',
 			on: function(request) {
 				request.accept({
-					topic: 'taxer',
+					topic: 'taxation',
 					action: 'calculate',
 					state : 'texas',
 					city : 'austin'

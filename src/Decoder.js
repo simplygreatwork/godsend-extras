@@ -1,5 +1,5 @@
 
-Transformer = module.exports = Class.extend({
+Decoder = module.exports = Class.extend({
 	
 	initialize: function(properties) {
 		
@@ -8,11 +8,9 @@ Transformer = module.exports = Class.extend({
 	
 	mount: function() {
 		
-		
 	},
 	
 	unmount : function() {
-		
 		
 	}
 });

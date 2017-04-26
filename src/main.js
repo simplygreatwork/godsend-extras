@@ -1,15 +1,18 @@
 
 module.exports = {
 	Authorizer : require('./Authorizer'),
+	Encoder : require('./Encoder'),
+	Encryptor : require('./Encryptor'),
 	Emailer : require('./Emailer'),
+	Logger : require('./Logger'),
 	Messenger : require('./Messenger'),
-	Notifier : require('./Notifier'),
+	Broadcaster : require('./Broadcaster'),
 	store : {
 		File : require('./store/File'),
 		Level : require('./store/Level'),
 		Memory : require('./store/Memory')
 	},
 	Taxer : require('./Taxer'),
-	Transformer : require('./Transformer'),
+	Transcriber : require('./Transcriber'),
 	Validator : require('./Validator'),
 };

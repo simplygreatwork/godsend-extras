@@ -1,5 +1,5 @@
 
-Notifier = module.exports = Class.extend({
+Decrypter = module.exports = Class.extend({
 	
 	initialize: function(properties) {
 		
@@ -8,11 +8,9 @@ Notifier = module.exports = Class.extend({
 	
 	mount: function() {
 		
-		
 	},
 	
 	unmount : function() {
-		
 		
 	}
 });
