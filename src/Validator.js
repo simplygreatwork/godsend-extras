@@ -1,5 +1,5 @@
 
-Validator = module.exports = Class.extend({
+Validator = module.exports = Class.extend({		// this generic validator should warn and not fail
 	
 	initialize: function(properties) {
 		
