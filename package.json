@@ -3,12 +3,12 @@
   "description": "Separation of concerns for streaming microservices.",
   "author": "Philip Weaver",
   "contributors": [],
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "./src/main.js",
   "scripts": {},
   "dependencies": {
-    "godsend": "0.4.1",
-    "godsend-basics": "0.4.1",
+    "godsend": "0.4.2",
+    "godsend-basics": "0.4.2",
     "node-forge": "0.7.1",
     "uuid": "3.0.1"
   },
