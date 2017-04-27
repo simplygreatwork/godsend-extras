@@ -8,7 +8,7 @@ Store = module.exports = Class.extend({
 	
 	mount: function() {
 		
-		this.connection.process({
+		this.connection.mount({
 			id: 'store-put',
 			on: function(request) {
 				request.accept({
@@ -21,7 +21,7 @@ Store = module.exports = Class.extend({
 			}.bind(this)
 		});
 		
-		this.connection.process({
+		this.connection.mount({
 			id: 'store-get',
 			on: function(request) {
 				request.accept({
@@ -34,7 +34,7 @@ Store = module.exports = Class.extend({
 			}.bind(this)
 		});
 		
-		this.connection.process({
+		this.connection.mount({
 			id: 'store-recent',
 			on: function(request) {
 				request.accept({
@@ -47,7 +47,7 @@ Store = module.exports = Class.extend({
 			}.bind(this)
 		});
 		
-		this.connection.process({
+		this.connection.mount({
 			id: 'store-find',
 			on: function(request) {
 				request.accept({

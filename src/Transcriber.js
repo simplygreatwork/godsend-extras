@@ -8,7 +8,7 @@ Transcriber = module.exports = Class.extend({
 	
 	mount: function() {
 		
-		this.connection.process({
+		this.connection.mount({
 			id: 'store-put-transcribe',
 			before: 'store-put',
 			on: function(request) {
