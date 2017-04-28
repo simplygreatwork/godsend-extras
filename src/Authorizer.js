@@ -17,18 +17,30 @@ Authorizer = module.exports = Class.extend({
 	
 	connect: function(callback) {
 		
-		this.connection = godsend.connect({
+		new godsend.Bus({
 			address: this.address,
+			secure: false
+		}).connect({
 			credentials: {
 				username: Credentials.get('authenticator').username,
 				passphrase: Credentials.get('authenticator').passphrase,
 			},
+			initialized : function(connection) {
+				this.mount(connection);
+			}.bind(this),
+			connected: function(connection) {
+				this.connection = connection;
+				callback();
+			}.bind(this),
+			errored : function(errors) {
+				console.error('Connection errors: ' + errors);
+			}.bind(this)
 		});
 	},
 	
-	mount: function() {
+	mount: function(connection) {
 		
-		this.connection.mount({
+		connection.mount({
 			id: 'authentication-get-user',
 			on: function(request) {
 				request.accept({
@@ -48,7 +60,7 @@ Authorizer = module.exports = Class.extend({
 			}.bind(this)
 		});
 
-		this.connection.mount({
+		connection.mount({
 			id: 'authentication-put-user',
 			on: function(request) {
 				request.accept({
