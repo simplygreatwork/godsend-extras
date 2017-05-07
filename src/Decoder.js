@@ -6,16 +6,14 @@ Decoder = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	mount: function(properties) {
 		
 		this.connection.mount({
-			id: 'store-put-decode',
+			route : properties.route || 'rebound',
+			id: 'decode',
 			weight : 0,
 			on: function(request) {
-				request.accept({
-					topic: 'store',
-					action: 'put'
-				});
+				request.accept();
 			}.bind(this),
 			run: function(stream) {
 				var string = stream.object.encoded.split('').reverse().join('');
@@ -29,7 +27,7 @@ Decoder = module.exports = Class.extend({
 	unmount : function() {
 		
 		this.connection.unmount({
-			id: 'store-put-decode'
+			id: 'decode'
 		});
 	}
 });

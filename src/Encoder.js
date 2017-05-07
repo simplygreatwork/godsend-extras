@@ -9,14 +9,11 @@ Encoder = module.exports = Class.extend({
 	mount: function(properties) {
 		
 		this.connection.mount({
-			route : properties.route || 'inbound',
-			id: 'store-put-encode',
+			route : properties.route || 'rebound',
+			id: 'encode',
 			weight : 0,
 			on: function(request) {
-				request.accept({
-					topic: 'store',
-					action: 'put'
-				});
+				request.accept();
 			}.bind(this),
 			run: function(stream) {
 				stream.push({
@@ -30,7 +27,7 @@ Encoder = module.exports = Class.extend({
 	unmount : function() {
 		
 		this.connection.unmount({
-			id: 'store-put-encode'
+			id: 'encode'
 		});
 	}
 });
