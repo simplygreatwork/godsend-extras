@@ -6,9 +6,10 @@ Encoder = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	mount: function(properties) {
 		
 		this.connection.mount({
+			route : properties.route || 'inbound',
 			id: 'store-put-encode',
 			weight : 0,
 			on: function(request) {
