@@ -9,7 +9,7 @@ Broadcaster = module.exports = Class.extend({
 	mount: function() {
 		
 		this.connection.mount({
-			id: 'store-put-notify',						// issue: random cyclical toposort error when this is changed
+			id: 'store-put-broadcast',
 			after: 'store-put',
 			on: function(request) {
 				request.accept({
