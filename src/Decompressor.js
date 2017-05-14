@@ -1,5 +1,5 @@
 
-Encrypter = module.exports = Class.extend({
+Decompressor = module.exports = Class.extend({
 	
 	initialize: function(properties) {
 		
