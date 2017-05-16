@@ -9,6 +9,11 @@ Store = module.exports = Class.extend({
 	
 	mount: function() {
 		
+		var service = new(require('./Common'))({
+			connection : this.connection
+		});
+		service.mount();
+		
 		this.connection.mount({
 			id: 'store-put',
 			on: function(request) {
