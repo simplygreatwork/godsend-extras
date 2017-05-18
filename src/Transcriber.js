@@ -6,7 +6,7 @@ Transcriber = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		this.connection.mount({
 			id: 'store-put-transcribe',
@@ -27,7 +27,7 @@ Transcriber = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}

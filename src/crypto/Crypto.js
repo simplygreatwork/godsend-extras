@@ -15,9 +15,9 @@ Crypto = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
-		this.mounting({
+		this.mount({
 			id: 'crypto-put-key',
 			route : 'rebound',
 			on: function(request) {
@@ -39,7 +39,7 @@ Crypto = module.exports = Class.extend({
 			}.bind(this)
 		});
 		
-		this.mounting({
+		this.mount({
 			id: 'encrypt-object',
 			route : 'rebound',
 			weight : 10,
@@ -65,7 +65,7 @@ Crypto = module.exports = Class.extend({
 			}.bind(this)
 		});
 		
-		this.mounting({
+		this.mount({
 			id: 'decrypt-object',
 			route : 'rebound',
 			weight : -10,
@@ -97,30 +97,30 @@ Crypto = module.exports = Class.extend({
 		});
 	},
 	
-	mounting : function(properties) {
+	mount : function(properties) {
 		
 		if (this.config[properties.id]) {
 			this.connection.mount(Object.assign(properties, this.config[properties.id]));
 		}
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
-		this.unmounting({
+		this.unmount({
 			id: 'crypto-put-key',
 			route : 'rebound'
 		});
-		this.unmounting({
+		this.unmount({
 			id: 'encrypt-object',
 			route : 'rebound'
 		});
-		this.unmounting({
+		this.unmount({
 			id: 'decrypt-object',
 			route : 'rebound'
 		});
 	},
 	
-	unmounting : function() {
+	unmount : function() {
 		
 		if (this.config[properties.id]) {
 			this.connection.unmount(Object.assign(properties, this.config[properties.id]));

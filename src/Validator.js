@@ -7,12 +7,12 @@ Validator = module.exports = Class.extend({		// this generic validator should wa
 		this.process(this.connection);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}

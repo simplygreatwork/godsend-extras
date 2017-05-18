@@ -6,7 +6,7 @@ Decoder = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function(properties) {
+	install: function(properties) {
 		
 		this.connection.mount({
 			route : properties.route || 'rebound',
@@ -24,7 +24,7 @@ Decoder = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		this.connection.unmount({
 			id: 'decode'

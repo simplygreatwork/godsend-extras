@@ -9,7 +9,7 @@ Logger = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		this.connection.mount({
 			id: 'request-logger',
@@ -51,7 +51,7 @@ Logger = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		this.connection.unmount({
 			id: 'inbound-logger'

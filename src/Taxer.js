@@ -6,7 +6,7 @@ Taxer = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		this.connection.mount({
 			id: 'taxer',
@@ -58,7 +58,7 @@ Taxer = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}

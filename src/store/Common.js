@@ -8,7 +8,7 @@ Common = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		this.connection.mount({									// here, *potentially* simplify the query for processing
 			id: 'store-get-begin',
@@ -192,7 +192,7 @@ Common = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}

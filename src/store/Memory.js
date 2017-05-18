@@ -7,12 +7,12 @@ Store = module.exports = Class.extend({
 		this.storage = {};
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		var service = new(require('./Common'))({
 			connection : this.connection
 		});
-		service.mount();
+		service.install();
 		
 		this.connection.mount({
 			id: 'store-put',
@@ -94,7 +94,7 @@ Store = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		this.connection.unmount({
 			id: 'store-put'

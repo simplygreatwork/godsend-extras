@@ -11,12 +11,12 @@ Store = module.exports = Class.extend({
 		this.database = levelws(this.database);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		var service = new(require('./Common'))({
 			connection : this.connection
 		});
-		service.mount();
+		service.install();
 		
 		this.connection.mount({
 			id: 'store-put',
@@ -68,10 +68,10 @@ Store = module.exports = Class.extend({
 						console.error('Level readstream error: ', error);
 					})
 					.on('close', function() {
-						if (true) console.log('Level readstream closed.');
+						if (false) console.log('Level readstream closed.');
 					})
 					.on('end', function() {
-						if (true) console.log('Level readstream ended.');
+						if (false) console.log('Level readstream ended.');
 						stream.push(new END());
 						stream.next();
 						if (false) stream.request.readable.close();
@@ -82,7 +82,7 @@ Store = module.exports = Class.extend({
 		
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}

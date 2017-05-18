@@ -6,12 +6,12 @@ Heartbeat = module.exports = Class.extend({
 		Object.assign(this, properties);
 	},
 	
-	mount: function() {
+	install: function() {
 		
 		
 	},
 	
-	unmount : function() {
+	uninstall : function() {
 		
 		
 	}
