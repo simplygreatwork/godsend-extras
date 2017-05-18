@@ -13,6 +13,6 @@ module.exports = {
 		Memory : require('./store/Memory')
 	},
 	Taxer : require('./Taxer'),
-	Transcriber : require('./Transcriber'),
+	Transcriber : require('./Registrar'),
 	Validator : require('./Validator'),
 };
