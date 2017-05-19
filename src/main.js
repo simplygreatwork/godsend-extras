@@ -1,7 +1,6 @@
 
 module.exports = {
 	Authorizer : require('./Authorizer'),
-	Decoder : require('./Decoder'),
 	Encoder : require('./Encoder'),
 	Emailer : require('./Emailer'),
 	Logger : require('./Logger'),

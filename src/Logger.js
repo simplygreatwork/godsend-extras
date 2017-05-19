@@ -54,7 +54,7 @@ Logger = module.exports = Class.extend({
 	uninstall : function() {
 		
 		this.connection.unmount({
-			id: 'inbound-logger'
+			id: 'request-logger'
 		});
 	}
 });

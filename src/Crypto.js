@@ -120,7 +120,7 @@ Crypto = module.exports = Class.extend({
 		});
 	},
 	
-	unmount : function() {
+	unmount : function(properties) {
 		
 		if (this.config[properties.id]) {
 			this.connection.unmount(Object.assign(properties, this.config[properties.id]));
