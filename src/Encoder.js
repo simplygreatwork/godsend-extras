@@ -24,7 +24,7 @@ Coder = module.exports = Class.extend({
 			weight : -10,
 			on: function(request) {
 				request.accept({
-					encode : true
+					encodable : true
 				});
 			}.bind(this),
 			run: function(stream) {
@@ -41,7 +41,7 @@ Coder = module.exports = Class.extend({
 			weight : 10,
 			on: function(request) {
 				request.accept({
-					encode : true
+					encodable : true
 				});
 			}.bind(this),
 			run: function(stream) {
