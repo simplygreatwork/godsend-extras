@@ -28,6 +28,7 @@ Coder = module.exports = Class.extend({
 				});
 			}.bind(this),
 			run: function(stream) {
+				console.log('Decoding object.');
 				var string = stream.object.encoded.split('').reverse().join('');
 				var object = JSON.parse(string);
 				stream.push(object);
@@ -45,6 +46,7 @@ Coder = module.exports = Class.extend({
 				});
 			}.bind(this),
 			run: function(stream) {
+				console.log('Encoding object.');
 				stream.push({
 					encoded : JSON.stringify(stream.object).split('').reverse().join('')
 				});
