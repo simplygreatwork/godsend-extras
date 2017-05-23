@@ -46,49 +46,12 @@ Store = module.exports = Class.extend({
 				var collection = stream.request.pattern.collection;
 				this.storage[collection] = this.storage[collection] || {};
 				collection = this.storage[collection];
-				var key = stream.object.key;
-				if (key) {
+				Object.keys(collection).forEach(function(key) {
 					stream.push({
 						key : key,
 						value : collection[key]
 					})
-				}
-				stream.next();
-			}.bind(this)
-		});
-		
-		this.connection.mount({
-			id: 'store-find',
-			on: function(request) {
-				request.accept({
-					topic: 'store',
-					action: 'find'
-				});
-			}.bind(this),
-			run: function(stream) {
-				var collection = stream.request.pattern.collection;
-				this.storage[collection] = this.storage[collection] || {};
-				collection = this.storage[collection];
-				if (stream.object.fields) {
-					Object.keys(collection).forEach(function(key) {
-						var each = collection[key];
-						var object = {};
-						Object.keys(stream.object.fields).forEach(function(property) {
-							object[property] = each[property];
-						}.bind(this));
-						stream.push({
-							key : key,
-							value : object
-						});
-					}.bind(this));
-				} else {
-					Object.keys(collection).forEach(function(key) {
-						stream.push({
-							key : key,
-							value : collection[key]
-						});
-					}.bind(this));
-				}
+				}.bind(this));
 				stream.next();
 			}.bind(this)
 		});
