@@ -56,7 +56,7 @@ Common = module.exports = Class.extend({
 			run: function(stream) {
 				if (stream.object instanceof END) {
 					stream.push(stream.object);
-				} else {					
+				} else {
 					var matches = false;
 					Object.keys(stream.request.pattern.match).forEach(function(key) {
 						var value = stream.request.pattern.match[key];
@@ -134,10 +134,10 @@ Common = module.exports = Class.extend({
 				} else {
 					var offset = stream.request.pattern.reduce.offset;
 					var limit = stream.request.pattern.reduce.limit;
-					if (! stream.request.counter) {
+					if (stream.request.counter === undefined) {
 						stream.request.counter = 0;
 					}
-					if ((offset <= stream.request.counter) && (stream.request.counter < offset + limit)) {
+					if ((offset <= stream.request.counter) && (stream.request.counter < (offset + limit))) {
 						stream.push(stream.object);
 					}
 					stream.request.counter++;
